@@ -6,14 +6,9 @@
 void setup() {
     pinMode(RED, OUTPUT);
     pinMode(GREEN, OUTPUT);
-
-    Serial.begin(9600);
 }
 
 void loop() {
-    Serial.print("Potentiometer signal: ");
-    Serial.println(analogRead(POTENTIOMETER));
-
     if (analogRead(POTENTIOMETER) < THRESHOLD) {
         digitalWrite(RED, HIGH);
         digitalWrite(GREEN, LOW);
